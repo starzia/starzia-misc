@@ -28,7 +28,7 @@ pushd "$parent" > $DEV_NULL
 accumulator=/tmp/blame.sh.$$.tmp
 # create a file naming the author of each line of code in the folder
 git ls-tree -r --name-only master $path | while read file; do
-    git blame --line-porcelain "${file}" |grep "author "|cut -c 8-
+    git blame --line-porcelain "${file}" |grep "^author "|cut -c 8-
 done > $accumulator
 
 # count occurences of each name
