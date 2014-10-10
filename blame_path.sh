@@ -36,7 +36,9 @@ sort $accumulator | awk '
 {if ($0==prev_name){
   count++;
 }else{
-  printf("%d %s\n", count, prev_name); 
+  if (count>0){
+    printf("%d %s\n", count, prev_name);
+  }
   prev_name=$0;
   count=1;
 }}' | sort -n
