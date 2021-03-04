@@ -12,8 +12,10 @@ find .|grep \
 -e '\.xa*ml$' \
 -e '\.css$' \
 -e '\.html$' \
+-e '\.js$' \
 -e '\.jsp$' \
 -e '\.sql$' \
+-e '\.py$' \
 |while read line
 do
   cat "$line"
